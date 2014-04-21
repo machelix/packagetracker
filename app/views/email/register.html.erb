@@ -1,10 +1,9 @@
 <h1>You are registered as Courier Now</h1>
 <div>
-  You can track your deliveries  with your tracking id: <%= @email.id %>
+  Your registered email address is  <%= @email.email_value %>
 </div>
 <div>
-    <br><%= link_to "Register Another Email",  new_email_path %>
-    <br><%= link_to "Check Packages or Emails in the City", find_path %><br>
+    <br><%= link_to "Register Another Email",  email_new_path %>
     <br><%= link_to "Homepage", root_path %>
 </div>
 
