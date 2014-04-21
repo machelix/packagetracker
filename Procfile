@@ -1,2 +1,2 @@
-web:     bundle exec rails server thin start -p 3000
+web:     bundle exec rails server thin start -p $PORT
 worker:  bundle exec rake jobs:work
