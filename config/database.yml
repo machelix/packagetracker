@@ -86,6 +86,6 @@ test:
 #
 production:
   <<: *default
-  database: packagetracker_production
-  username: packagetracker
-  password: <%= ENV['DISPATCHPACKAGE_DATABASE_PASSWORD'] %>
+  database: packagetracker
+  username: <%= ENV['PACKAGETRACKER_DATABASE_USER'] %>
+  password: <%= ENV['PACKAGETRACKER_DATABASE_PASSWORD'] %>
