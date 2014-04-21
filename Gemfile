@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.0'
 
 gem 'delayed_job_active_record' , '4.0.1'
 gem 'daemon-spawn', '0.4.2'
