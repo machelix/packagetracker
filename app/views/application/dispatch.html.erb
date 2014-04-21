@@ -4,7 +4,7 @@
 <div>
   <form id="search" action="/dispatch" method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-    City Id: <input type="text" name="city_db_id"> <br>
+    City Id: <input type="text" name="application[city_db_id]"> <br>
     <input type="submit" value="Submit">
   </form>
 </div>

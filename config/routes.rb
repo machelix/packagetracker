@@ -5,16 +5,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'application#index'
-  match '/dispatch' , to: 'application#dispatch' , via: 'get'
-  match '/dispatch' , to: 'application#notify_couriers' , via: 'post'
+  match '/dispatch' , :to => 'application#dispatch' , :via => 'get'
+  match '/dispatch' , :to => 'application#notify_couriers' , :via => 'post'
 
-  match '/package/new' , to: 'package#new' , via: 'get'
-  match '/package/new' , to: 'package#create' , via: 'post'
-  match '/package/find' , to: 'package#find' , via: 'post'
+  match '/package/new' , :to => 'package#new' , :via => 'get'
+  match '/package/new' , :to => 'package#create' , :via => 'post'
 
-  match '/email/new' , to: 'email#new' , via: 'get'
-  match '/email/new' , to: 'email#create' , via: 'post'
-  match '/email/find' , to: 'email#find' , via: 'post'
+  match '/email/new' , :to => 'email#new' , :via => 'get'
+  match '/email/new' , :to => 'email#create' , :via => 'post'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

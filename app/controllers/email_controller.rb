@@ -2,11 +2,7 @@ class EmailController < ActionController::Base
   include EmailHelper
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-
-  def find
-    @emails = find_emails(params[:city_db_id])
-  end
+  protect_from_forgery :with => :exception
 
   def new
     @email = Email.new

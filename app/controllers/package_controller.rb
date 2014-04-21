@@ -2,11 +2,7 @@ class PackageController < ActionController::Base
   include PackageHelper
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-
-  def find
-    @packages = find_packages(params[:city_db_id])
-  end
+  protect_from_forgery :with => :exception
 
   def new
     @package = Package.new
