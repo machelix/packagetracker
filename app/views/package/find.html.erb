@@ -1,0 +1,14 @@
+<h1>Package Status</h1>
+Current Time: <%= @current_time  %>
+
+<ul>
+
+ <%= render 'shared/package' %>
+
+</ul>
+
+<div>
+  <br> <%= link_to "Send Another Package",  new_package_path %><br>
+  <%= link_to "Check Packages or Emails in the City", find_path %><br>
+  <%= link_to "Homepage", root_path %>
+</div>

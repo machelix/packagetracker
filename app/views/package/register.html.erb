@@ -1,0 +1,10 @@
+<h1>Package Booked</h1>
+<div>
+  You can track your package with tracking id: <%= @package.id %>
+</div>
+<div>
+  <br> <%= link_to "Send Another Package",  new_package_path %><br>
+    <%= link_to "Check Packages or Emails in the City", find_path %><br>
+    <%= link_to "Homepage", root_path %>
+</div>
+

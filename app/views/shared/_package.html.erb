@@ -1,0 +1,11 @@
+<% if @packages.size > 0 %>
+    <% @packages.each do | package | %>
+        <li>
+          <%= "Package Id: " + package.id.to_s %>
+          <%= "City Id: " + package.city_db_id.to_s %>
+          <%= "Booking Time: " + package.created_at.to_s %>
+        </li>
+    <% end %>
+<% else %>
+    No Package Available for this city!
+<% end %>

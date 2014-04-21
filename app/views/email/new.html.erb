@@ -1,0 +1,9 @@
+<h1>Register As Courier</h1>
+<div>
+  <form name="input" action="/email/new" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+    City Code: <input type="text" name="email[city_db_id]"> <br>
+    Email Address: <input type="text" name="email[email_value]"> <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>

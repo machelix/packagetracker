@@ -1,0 +1,14 @@
+<div>
+  <h2>Find Email or Package from City</h2>
+</div>
+<div>
+  <form id="search" action="/package/find" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+    <div align="left"> What you would like to search:<br>
+    <input type="radio" name="radio" value="package" onclick="document.getElementById('search').action='/package/find';" checked/>Packages<br>
+    <input type="radio" name="radio" value="email" onclick="document.getElementById('search').action='/email/find';" />Emails<br>
+    City Id: <input type="text" name="city_db_id"> <br>
+    <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
