@@ -5,7 +5,7 @@ class PackageController < ActionController::Base
   protect_from_forgery with: :exception
 
   def find
-    @packages , @current_time = dispatch_packages(params[:city_db_id])
+    @packages = find_packages(params[:city_db_id])
   end
 
   def new

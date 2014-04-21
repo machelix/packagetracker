@@ -5,14 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'application#index'
-  match '/find' , to: 'application#find' , via: 'get'
+  match '/dispatch' , to: 'application#dispatch' , via: 'get'
+  match '/dispatch' , to: 'application#notify_couriers' , via: 'post'
 
-  resources :package
   match '/package/new' , to: 'package#new' , via: 'get'
   match '/package/new' , to: 'package#create' , via: 'post'
   match '/package/find' , to: 'package#find' , via: 'post'
 
-  resources :email
   match '/email/new' , to: 'email#new' , via: 'get'
   match '/email/new' , to: 'email#create' , via: 'post'
   match '/email/find' , to: 'email#find' , via: 'post'

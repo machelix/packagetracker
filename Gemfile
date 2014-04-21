@@ -6,6 +6,7 @@ gem 'daemon-spawn', '0.4.2'
 gem 'foreman', '0.63.0'
 gem 'thin', '1.6.2'
 gem 'rails_12factor', group: :production
+gem 'clockwork' , '0.7.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

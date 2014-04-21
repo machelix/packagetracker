@@ -1,6 +1,6 @@
 module EmailHelper
 
-  def dispatch_emails(city_id)
+  def find_emails(city_id)
      if city_id == '*'
       emails = Email.all
      else

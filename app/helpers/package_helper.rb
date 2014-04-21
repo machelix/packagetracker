@@ -1,13 +1,12 @@
 module PackageHelper
 
-  def dispatch_packages(city_id)
-     @current_time = Time.now
+  def find_packages(city_id)
      if city_id == '*'
-      packages = City.all
+      packages = Package.all
      else
-      packages = City.where(:city_db_id => city_id)
+      packages = Package.where(:city_db_id => city_id)
      end
-     return packages, @current_time
+     return packages
   end
 
 end

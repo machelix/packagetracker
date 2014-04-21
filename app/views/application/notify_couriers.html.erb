@@ -1,0 +1,29 @@
+<h3> Current time: <%= @current_time %> </h3>
+<% if @packages.size > 0 %>
+    <h4> Packages available to be delivered in the city: <%= @packages.size %> </h4>
+    <h5> Packages Detail </h5>
+    <ul>
+      <% @packages.each do |package| %>
+      <li> Package Id: <%= package.id %></li>
+      <% end %>
+    </ul>
+<% else %>
+    <h4> No Package available to be delivered in the city</h4>
+<% end %>
+
+<% if @emails.size > 0 %>
+    <h4> Couriers available to deliver the packages in the city: <%= @emails.size %></h4>
+    <h5> Couriers Detail </h5>
+    <ul>
+      <% @emails.each do |email| %>
+          <li> Email Address: <%= email.email_value %></li>
+      <% end %>
+    </ul>
+<% else %>
+    <h4> Sorry! No courier available to deliver the packages in the city</h4>
+<% end %>
+
+<div>
+  <br><%= link_to "Dispatch Packages", dispatch_path %>
+  <br><%= link_to "Homepage", root_path %>
+</div>
