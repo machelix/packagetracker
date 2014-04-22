@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery :with => :exception
   http_basic_authenticate_with :name => "admin", :password => "alphabetagamma"
 
-
+  # Runs a notify couriers action for application : send out emails to registered couriers with package details
+  # Params: city db id for application controller
+  # - command :: command line string to be executed by the system
+  # - outhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
+  # - errhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
   def notify_couriers
     @current_time = Time.now
 
@@ -25,6 +29,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  # Private method available to application controller methods : used for strongly checking paramaters to various actions inside controller
+  # Params: permitted city db id for application controller
+  # - command :: command line string to be executed by the system
+  # - outhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
+  # - errhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
   def application_params
     params.require(:application).permit(:city_db_id)
   end

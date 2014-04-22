@@ -73,38 +73,6 @@ class ApplicationControllerTest < ActionController::TestCase
     assert_template :dispatch
   end
 
-  test "should be able to post dispatch with params" do
-    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:alphabetagamma")
-
-    #post :new , :email => { :city_db_id => "12345", :email_value => "test@testing.com" }
-
-    #assert_response :success
-
-    #assert_template :dispatch
-
-    #ActionController::UrlGenerationError: No route matches
-  end
-
-  test "should get notify_couriers" do
-    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:alphabetagamma")
-
-    #get :notify_couriers
-    #ActionController::ParameterMissing: param is missing or the value is empty: application
-    #assert_response :success
-    #
-    #assert_template :notify_couriers
-  end
-
-  test "should be able to post notify_couriers" do
-    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:alphabetagamma")
-
-    #post :notify_couriers
-
-    #assert_response :success
-    #ActionController::ParameterMissing: param is missing or the value is empty: application
-    #assert_template :notify_couriers
-  end
-
   test "should get notify_couriers with params" do
     @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:alphabetagamma")
 
@@ -118,6 +86,8 @@ class ApplicationControllerTest < ActionController::TestCase
   test "should be able to post notify_couriers with params" do
     @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:alphabetagamma")
 
+    assert_recognizes({:controller => 'application', :action => 'notify_couriers'}, { :path => 'dispatch', :method => :post})
+
     post :notify_couriers , :application => {:city_db_id => "12345"}
 
     assert_response :success
@@ -129,8 +99,6 @@ class ApplicationControllerTest < ActionController::TestCase
 
     # Assert that the controller really put the record in the database.
     assert_not_nil Package.find_by(:city_db_id => "12345")
-
-    #ActionController::UrlGenerationError: No route matches
   end
 
 end
