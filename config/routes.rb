@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root 'application#index'
   match '/dispatch' , :to => 'application#dispatch' , :via => 'get'
   match '/dispatch' , :to => 'application#notify_couriers' , :via => 'post'
+  match '/schedule' , :to => 'application#schedule', :via => 'get'
+  match '/schedule' , :to => 'application#scheduled_notification', :via => 'post'
 
   match '/package/new' , :to => 'package#new' , :via => 'get'
   match '/package/new' , :to => 'package#create' , :via => 'post'

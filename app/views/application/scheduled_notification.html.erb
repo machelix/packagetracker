@@ -1,0 +1,11 @@
+<div>
+  <h2>Dispatch Packages from City <%= @city_db_id %> at following scheduled times:</h2>
+  <% @scheduled_time.each do |time| %>
+  <%= time %> <br>
+  <% end %>
+</div>
+
+<div>
+  <br><%= link_to "Scheduled Dispatch Packages(Admin method)", schedule_path %>
+  <br><%= link_to "Homepage", root_path %>
+</div>

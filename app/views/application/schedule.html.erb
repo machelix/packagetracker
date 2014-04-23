@@ -1,0 +1,45 @@
+<div>
+  <h2>Dispatch Packages from City at scheduled time</h2>
+</div>
+<div>
+  <form id="search" action="/schedule" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+    City Id: <input type="text" name="application[city_db_id]"> <br>
+    Scheduled Time:
+    <select multiple name="time[]" id="time">
+      <option value="5:00">5:00 AM</option>
+      <option value="5:30">5:30 AM</option>
+      <option value="6:00">6:00 AM</option>
+      <option value="6:30">6:30 AM</option>
+      <option value="7:30">7:30 AM</option>
+      <option value="9:00">9:00 AM</option>
+      <option value="10:00">10:00 AM</option>
+      <option value="12:00">12:00 PM</option>
+      <option value="13:00">1:00 PM</option>
+      <option value="14:00">2:00 PM</option>
+      <option value="15:00">3:00 PM</option>
+      <option value="16:00">4:00 PM</option>
+      <option value="17:00">5:00 PM</option>
+      <option value="17:00">5:00 PM</option>
+      <option value="17:15">5:15 PM</option>
+      <option value="17:20">5:20 PM</option>
+      <option value="17:25">5:25 PM</option>
+      <option value="17:30">5:30 PM</option>
+      <option value="17:35">5:35 PM</option>
+      <option value="17:40">5:40 PM</option>
+      <option value="17:45">5:45 PM</option>
+      <option value="17:50">5:50 PM</option>
+      <option value="17:55">5:55 PM</option>
+      <option value="18:00">6:00 PM</option>
+      <option value="19:00">7:00 PM</option>
+      <option value="19:30">7:30 PM</option>
+      <option value="20:30">8:30 PM</option>
+      <option value="20:45">8:45 PM</option>
+      <option value="21:45">9:45 PM</option>
+      <option value="22:30">10:30 PM</option>
+      <option value="23:15">11:15 PM</option>
+      <option value="23:45">11:45 PM</option>
+    </select><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
