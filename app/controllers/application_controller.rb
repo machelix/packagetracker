@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   # Runs a notify couriers action for application at specific time : send out emails to registered couriers with package details
-  # Params: city db id
+  # Params: city db id & schedule times for dispatcher
   # - command :: command line string to be executed by the system
   # - outhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
   # - errhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
