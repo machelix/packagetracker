@@ -1,4 +1,6 @@
 class NotifyCouriersJob < Struct.new(:city_db_id)
+  include PackageHelper
+  include EmailHelper
   # Job to fetch packages from city and send emails to registered couriers from the same city
   # Params: city db id for the city
   # Return: email sent to registered couriers
