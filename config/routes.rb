@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   match '/email/new' , :to => 'email#new' , :via => 'get'
   match '/email/new' , :to => 'email#create' , :via => 'post'
 
+  match '/*paths' => redirect('/') , :via => [:get, :post]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
