@@ -8,7 +8,7 @@
 <p>
 We have following packages to be delivered.
 </p>
-<h5> Packages Detail at <%= @current_time  %></h5>
+<h5> Packages Detail at <%= @current_time.utc  %></h5>
 <ul>
   <% @packages.each do |package| %>
       <li> Package Id: <%= package.id %></li>
