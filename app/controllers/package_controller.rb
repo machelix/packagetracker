@@ -21,15 +21,18 @@ class PackageController < ActionController::Base
   def create
     @package = Package.new(package_params)
 
-    if @package.save!
-      @city = City.new(city_params.merge(:city_db_id => @package.city_db_id, :package_db_id => @package.id))
-      if @city.save!
-        render 'package/register'
-      else
-        render root_path
+    begin
+      if @package.save!
+        @city = City.new(city_params.merge(:city_db_id => @package.city_db_id, :package_db_id => @package.id))
+        if @city.save!
+          render 'package/register'
+        end
       end
-    else
-      render root_path
+    rescue => e
+      #p e.message
+      #p e.backtrace
+      @errors = e.message
+      render 'application/error', :status => 400
     end
   end
 
