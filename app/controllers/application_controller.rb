@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   # - outhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
   # - errhandler :: +Proc+ object that takes a pipe object as first and only param (may be nil)
   def notify_couriers
-    @current_time = Time.now
+    @current_time = Time.zone.now
 
     @packages = find_packages(application_params[:city_db_id])
 

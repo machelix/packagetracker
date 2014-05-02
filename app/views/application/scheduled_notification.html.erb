@@ -1,7 +1,7 @@
 <div>
   <h2>Dispatch Packages from City <%= @city_db_id %> at following scheduled times:</h2>
   <% @scheduled_time.each do |time| %>
-  <%= time %> <br>
+  <%= Time.zone.parse(time) %>  <br>
   <% end %>
 </div>
 
